@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { BarChart } from "./components/BarChart";
+import { StackedBarChart } from "./components/StackedBarChart";
 
-function App() {
+const BAR_CHART_DATA = [
+  { label: "Apples", value: 100 },
+  { label: "Bananas", value: 200 },
+  { label: "Oranges", value: 50 },
+  { label: "Kiwis", value: 150 },
+];
+
+const GROUPED_BAR_CHART_DATA = [
+  { label: "Apples", values: [60, 80, 100] },
+  { label: "Bananas", values: [160, 200, 120] },
+  { label: "Oranges", values: [60, 40, 10] },
+];
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BarChart data={BAR_CHART_DATA} />
+      <StackedBarChart data={GROUPED_BAR_CHART_DATA} />
     </div>
   );
-}
+};
 
 export default App;
